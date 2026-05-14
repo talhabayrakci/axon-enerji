@@ -1,78 +1,166 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen overflow-hidden bg-black text-white">
 
       {/* Navbar */}
-      <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur">
+      <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
+
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
           {/* Logo */}
-          <img
-            src="/logo.png"
-            alt="Axon Enerji"
-            className="h-12 w-auto"
-          />
+          <a href="#">
+            <img
+              src="/logo.png"
+              alt="Axon Enerji"
+              className="h-12 w-auto"
+            />
+          </a>
 
-          {/* Menu */}
-          <nav className="hidden gap-8 md:flex">
+          {/* Desktop Menu */}
+          <nav className="hidden items-center gap-8 md:flex">
+
             <a href="#" className="transition hover:text-yellow-400">
               Ana Sayfa
             </a>
 
-            <a href="#services" className="transition hover:text-yellow-400">
+            <a
+              href="#services"
+              className="transition hover:text-yellow-400"
+            >
               Hizmetler
             </a>
 
-            <a href="#projects" className="transition hover:text-yellow-400">
+            <a
+              href="#projects"
+              className="transition hover:text-yellow-400"
+            >
               Projeler
             </a>
 
-            <a href="#about" className="transition hover:text-yellow-400">
+            <a
+              href="#about"
+              className="transition hover:text-yellow-400"
+            >
               Hakkımızda
             </a>
 
-            <a href="#contact" className="transition hover:text-yellow-400">
+            <a
+              href="#contact"
+              className="transition hover:text-yellow-400"
+            >
               İletişim
             </a>
+
           </nav>
 
+          {/* Mobile Button */}
+          <button
+            onClick={() => setMobileMenu(!mobileMenu)}
+            className="text-3xl md:hidden"
+          >
+            ☰
+          </button>
+
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenu && (
+          <div className="border-t border-white/10 bg-black/95 px-6 py-6 md:hidden">
+
+            <div className="flex flex-col gap-6 text-lg">
+
+              <a
+                href="#"
+                onClick={() => setMobileMenu(false)}
+                className="transition hover:text-yellow-400"
+              >
+                Ana Sayfa
+              </a>
+
+              <a
+                href="#services"
+                onClick={() => setMobileMenu(false)}
+                className="transition hover:text-yellow-400"
+              >
+                Hizmetler
+              </a>
+
+              <a
+                href="#projects"
+                onClick={() => setMobileMenu(false)}
+                className="transition hover:text-yellow-400"
+              >
+                Projeler
+              </a>
+
+              <a
+                href="#about"
+                onClick={() => setMobileMenu(false)}
+                className="transition hover:text-yellow-400"
+              >
+                Hakkımızda
+              </a>
+
+              <a
+                href="#contact"
+                onClick={() => setMobileMenu(false)}
+                className="transition hover:text-yellow-400"
+              >
+                İletişim
+              </a>
+
+            </div>
+
+          </div>
+        )}
+
       </header>
 
       {/* Hero */}
-      <section className="grid-background relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
+      <section className="grid-background relative flex min-h-screen items-center justify-center px-6 text-center">
 
         {/* Glow */}
         <div className="absolute h-[500px] w-[500px] rounded-full bg-yellow-400/20 blur-3xl"></div>
 
+        {/* Hero Content */}
         <div className="relative z-10">
 
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-yellow-400">
+          <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
             ENERJİ OTOMASYONU & SCADA
           </p>
 
           <h1 className="text-5xl font-bold leading-tight md:text-7xl">
+
             Geleceğin
             <span className="text-yellow-400"> Enerji </span>
             Teknolojileri
+
           </h1>
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-gray-300 md:text-xl">
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
+
             SCADA sistemleri, enerji otomasyonu, RTU çözümleri ve endüstriyel yazılım geliştirme hizmetleri sunuyoruz.
+
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
 
             <a
               href="#projects"
-              className="rounded-xl bg-yellow-400 px-8 py-4 font-semibold text-black transition hover:scale-105"
+              className="rounded-2xl bg-yellow-400 px-8 py-4 font-semibold text-black transition hover:scale-105"
             >
               Projelerimiz
             </a>
 
             <a
               href="#contact"
-              className="rounded-xl border border-white/20 px-8 py-4 transition hover:border-yellow-400 hover:text-yellow-400"
+              className="rounded-2xl border border-white/20 px-8 py-4 transition hover:border-yellow-400 hover:text-yellow-400"
             >
               İletişime Geç
             </a>
@@ -93,8 +181,8 @@ export default function Home() {
 
           <div className="mb-16 text-center">
 
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-yellow-400">
-              Hizmetlerimiz
+            <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
+              HİZMETLERİMİZ
             </p>
 
             <h2 className="text-4xl font-bold md:text-5xl">
@@ -105,7 +193,7 @@ export default function Home() {
 
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-yellow-400 hover:bg-white/10">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-yellow-400">
 
               <div className="mb-6 text-5xl text-yellow-400">
                 ⚡
@@ -115,13 +203,13 @@ export default function Home() {
                 Enerji Otomasyonu
               </h3>
 
-              <p className="text-gray-400">
-                Trafo merkezleri, enerji izleme ve otomasyon sistemleri çözümleri.
+              <p className="leading-7 text-gray-400">
+                Trafo merkezleri ve enerji otomasyon çözümleri.
               </p>
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-yellow-400 hover:bg-white/10">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-green-400">
 
               <div className="mb-6 text-5xl text-green-400">
                 🖥
@@ -131,13 +219,13 @@ export default function Home() {
                 SCADA Sistemleri
               </h3>
 
-              <p className="text-gray-400">
-                Gerçek zamanlı izleme, kontrol ve veri yönetim sistemleri.
+              <p className="leading-7 text-gray-400">
+                Gerçek zamanlı kontrol ve izleme altyapıları.
               </p>
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-yellow-400 hover:bg-white/10">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-yellow-400">
 
               <div className="mb-6 text-5xl text-yellow-400">
                 🔌
@@ -147,13 +235,13 @@ export default function Home() {
                 RTU & Haberleşme
               </h3>
 
-              <p className="text-gray-400">
-                IEC 60870-5-101/104 ve Modbus çözümleri.
+              <p className="leading-7 text-gray-400">
+                IEC 60870-5-101/104 ve Modbus entegrasyonları.
               </p>
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-yellow-400 hover:bg-white/10">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-green-400">
 
               <div className="mb-6 text-5xl text-green-400">
                 💻
@@ -163,8 +251,8 @@ export default function Home() {
                 Yazılım Geliştirme
               </h3>
 
-              <p className="text-gray-400">
-                Dashboard sistemleri ve özel yazılım çözümleri.
+              <p className="leading-7 text-gray-400">
+                Dashboard ve özel endüstriyel yazılım çözümleri.
               </p>
 
             </div>
@@ -178,7 +266,7 @@ export default function Home() {
       {/* Stats */}
       <section className="border-t border-white/10 bg-black px-6 py-20">
 
-        <div className="mx-auto grid max-w-7xl gap-8 text-center md:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-10 text-center md:grid-cols-4">
 
           <div>
             <h3 className="text-5xl font-bold text-yellow-400">
@@ -234,12 +322,12 @@ export default function Home() {
 
           <div className="mb-16 text-center">
 
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-yellow-400">
-              Projelerimiz
+            <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
+              PROJELER
             </p>
 
             <h2 className="text-4xl font-bold md:text-5xl">
-              Tamamlanan Mühendislik Projeleri
+              Tamamlanan Projeler
             </h2>
 
           </div>
@@ -248,12 +336,12 @@ export default function Home() {
 
             <div className="group overflow-hidden rounded-3xl border border-white/10 bg-black">
 
-              <div className="h-64 overflow-hidden">
+              <div className="overflow-hidden">
 
                 <img
                   src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
-                  alt="SCADA"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                  alt="Project"
+                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
                 />
 
               </div>
@@ -264,8 +352,8 @@ export default function Home() {
                   SCADA Kontrol Merkezi
                 </h3>
 
-                <p className="text-gray-400">
-                  Enerji izleme ve uzaktan kontrol altyapısı geliştirme projesi.
+                <p className="leading-7 text-gray-400">
+                  Gerçek zamanlı enerji izleme ve uzaktan kontrol altyapısı.
                 </p>
 
               </div>
@@ -274,12 +362,12 @@ export default function Home() {
 
             <div className="group overflow-hidden rounded-3xl border border-white/10 bg-black">
 
-              <div className="h-64 overflow-hidden">
+              <div className="overflow-hidden">
 
                 <img
                   src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1200&auto=format&fit=crop"
-                  alt="RTU"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                  alt="Project"
+                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
                 />
 
               </div>
@@ -290,8 +378,8 @@ export default function Home() {
                   RTU Haberleşme Sistemi
                 </h3>
 
-                <p className="text-gray-400">
-                  IEC 60870-5-104 haberleşme altyapısı ve entegrasyon çözümleri.
+                <p className="leading-7 text-gray-400">
+                  IEC 60870-5-104 haberleşme çözümleri.
                 </p>
 
               </div>
@@ -300,12 +388,12 @@ export default function Home() {
 
             <div className="group overflow-hidden rounded-3xl border border-white/10 bg-black">
 
-              <div className="h-64 overflow-hidden">
+              <div className="overflow-hidden">
 
                 <img
                   src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
-                  alt="Software"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                  alt="Project"
+                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
                 />
 
               </div>
@@ -316,8 +404,8 @@ export default function Home() {
                   Endüstriyel Yazılım
                 </h3>
 
-                <p className="text-gray-400">
-                  Özel dashboard ve enerji analiz yazılımları geliştirme hizmeti.
+                <p className="leading-7 text-gray-400">
+                  Dashboard ve veri analiz sistemleri geliştirme hizmetleri.
                 </p>
 
               </div>
@@ -340,8 +428,8 @@ export default function Home() {
 
           <div>
 
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-yellow-400">
-              Hakkımızda
+            <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
+              HAKKIMIZDA
             </p>
 
             <h2 className="text-4xl font-bold md:text-5xl">
@@ -349,14 +437,18 @@ export default function Home() {
             </h2>
 
             <p className="mt-8 text-lg leading-8 text-gray-400">
-              Axon Enerji Mühendislik olarak enerji otomasyonu, SCADA sistemleri,
-              RTU çözümleri ve endüstriyel yazılım alanlarında modern mühendislik
-              hizmetleri sunuyoruz.
+
+              Axon Enerji Mühendislik olarak enerji otomasyonu,
+              SCADA sistemleri, RTU çözümleri ve endüstriyel yazılım alanlarında
+              modern mühendislik hizmetleri sunuyoruz.
+
             </p>
 
             <p className="mt-6 text-lg leading-8 text-gray-400">
-              Güvenilir, sürdürülebilir ve yüksek performanslı sistemler geliştirerek
-              müşterilerimizin operasyonel verimliliğini artırıyoruz.
+
+              Güvenilir, sürdürülebilir ve yüksek performanslı sistemler
+              geliştirerek müşterilerimizin operasyonel verimliliğini artırıyoruz.
+
             </p>
 
           </div>
@@ -366,33 +458,39 @@ export default function Home() {
             <div className="space-y-8">
 
               <div>
+
                 <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                   IEC 60870-5-101/104
                 </h3>
 
                 <p className="text-gray-400">
-                  Endüstriyel haberleşme protokol entegrasyonları.
+                  Endüstriyel haberleşme protokol çözümleri.
                 </p>
+
               </div>
 
               <div>
+
                 <h3 className="mb-2 text-2xl font-semibold text-green-400">
                   SCADA & RTU
                 </h3>
 
                 <p className="text-gray-400">
-                  Gerçek zamanlı enerji izleme ve kontrol sistemleri.
+                  Enerji izleme ve kontrol sistemleri.
                 </p>
+
               </div>
 
               <div>
+
                 <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                   Yazılım Çözümleri
                 </h3>
 
                 <p className="text-gray-400">
-                  Özel dashboard, veri analizi ve otomasyon uygulamaları.
+                  Dashboard ve otomasyon uygulamaları.
                 </p>
+
               </div>
 
             </div>
@@ -411,16 +509,18 @@ export default function Home() {
 
         <div className="mx-auto max-w-4xl text-center">
 
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-yellow-400">
-            İletişim
+          <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
+            İLETİŞİM
           </p>
 
           <h2 className="text-4xl font-bold md:text-5xl">
             Bizimle İletişime Geçin
           </h2>
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-gray-400">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-gray-400">
+
             Enerji otomasyonu ve SCADA çözümleri için bize ulaşın.
+
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
