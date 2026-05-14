@@ -254,6 +254,15 @@ export default function Home() {
       </section>
 
       {/* Footer */}
+            {/* WhatsApp Button */}
+
+      <a
+        href="https://wa.me/905301518922"
+        target="_blank"
+        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-3xl text-white shadow-2xl transition hover:scale-110"
+      >
+        💬
+      </a>
       <footer className="border-t border-white/10 bg-black px-6 py-10">
 
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center md:flex-row">
