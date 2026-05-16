@@ -45,6 +45,26 @@ export default function Home() {
             </a>
 
             <a
+  href="/scada-sistemleri"
+  className="transition hover:text-yellow-400"
+>
+  SCADA
+</a>
+
+<a
+  href="/iec-104"
+  className="transition hover:text-yellow-400"
+>
+  IEC 104
+</a>
+
+<a
+  href="/rtu-cozumleri"
+  className="transition hover:text-yellow-400"
+>
+  RTU
+</a>
+            <a
               href="#services"
               className="transition hover:text-yellow-400"
             >
