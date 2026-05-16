@@ -6,7 +6,7 @@ export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <main className="overflow-hidden bg-[#111111] text-white">
+    <main className="overflow-x-hidden bg-[#111111] text-white">
 
       {/* =========================
           NAVBAR
@@ -18,53 +18,29 @@ export default function Home() {
 
           {/* LOGO */}
 
-          <a
-            href="#"
-            className="flex items-center"
-          >
+          <a href="#" className="flex items-center">
 
-            <div className="flex flex-col items-start leading-none">
-
-              <img
-                src="/logo.png"
-                alt="AXON ENERJİ"
-                className="
-                  h-30
-                  w-auto
-                  object-contain
-                  transition
-                  duration-300
-                  hover:scale-105
-                  md:h-38
-                "
-              />
-
-              <p
-                className="
-                  mt-1
-                  pl-[2px]
-                  text-[6px]
-                  uppercase
-                  tracking-[0.32em]
-                  text-yellow-400/60
-                  md:text-[7px]
-                "
-              >
-                
-              </p>
-
-            </div>
+            <img
+              src="/logo.png"
+              alt="AXON ENERJİ"
+              className="
+                h-36
+                w-auto
+                object-contain
+                transition
+                duration-300
+                hover:scale-105
+                md:h-42
+              "
+            />
 
           </a>
 
           {/* DESKTOP MENU */}
 
-          <nav className="hidden items-center gap-10 text-sm md:flex">
+          <nav className="hidden items-center gap-10 text-sm font-medium md:flex">
 
-            <a
-              href="#"
-              className="transition hover:text-yellow-400"
-            >
+            <a href="#" className="transition hover:text-yellow-400">
               Ana Sayfa
             </a>
 
@@ -83,10 +59,10 @@ export default function Home() {
             </a>
 
             <a
-              href="#technology"
+              href="#location"
               className="transition hover:text-yellow-400"
             >
-              Teknolojiler
+              Konum
             </a>
 
             <a
@@ -127,8 +103,8 @@ export default function Home() {
                 Projeler
               </a>
 
-              <a href="#technology">
-                Teknolojiler
+              <a href="#location">
+                Konum
               </a>
 
               <a href="#contact">
@@ -144,7 +120,7 @@ export default function Home() {
       </header>
 
       {/* =========================
-          HERO SECTION
+          HERO
       ========================= */}
 
       <section
@@ -159,7 +135,7 @@ export default function Home() {
         "
       >
 
-        {/* COLOR EFFECTS */}
+        {/* BACKGROUND EFFECTS */}
 
         <div className="absolute left-[-200px] top-[50px] h-[500px] w-[500px] rounded-full bg-yellow-500/20 blur-3xl"></div>
 
@@ -177,7 +153,7 @@ export default function Home() {
           "
         />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
 
           {/* LEFT */}
 
@@ -185,22 +161,13 @@ export default function Home() {
 
             <div className="mb-6 h-[3px] w-24 bg-yellow-400"></div>
 
-            <p
-              className="
-                mb-6
-                text-sm
-                font-medium
-                uppercase
-                tracking-[0.4em]
-                text-yellow-400
-              "
-            >
+            <p className="mb-6 text-sm font-medium uppercase tracking-[0.4em] text-yellow-400">
               AXON ENERJİ
             </p>
 
             <h1
               className="
-                text-3xl
+                text-4xl
                 font-semibold
                 leading-[1]
                 tracking-tight
@@ -208,15 +175,12 @@ export default function Home() {
                 md:text-4xl
               "
             >
-
-              
-
               <span className="block text-yellow-400">
                 SCADA SİSTEMLERİ
               </span>
 
-               
-
+              Enerji Otomasyonu &
+              RTU Çözümleri
             </h1>
 
             <p
@@ -228,9 +192,9 @@ export default function Home() {
                 text-gray-300
               "
             >
-              IEC 60870-5-101/104 haberleşme
-              altyapıları, RTU çözümleri ve enerji otomasyonu
-              alanlarında modern mühendislik hizmetleri sunuyoruz.
+              IEC 60870-5-101/104 haberleşme altyapıları,
+              RTU çözümleri ve enerji otomasyonu alanlarında
+              modern mühendislik hizmetleri sunuyoruz.
             </p>
 
             {/* BUTTONS */}
@@ -323,7 +287,7 @@ export default function Home() {
 
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT */}
 
           <div className="relative min-h-[700px]">
 
@@ -345,11 +309,7 @@ export default function Home() {
               <img
                 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1800&auto=format&fit=crop"
                 alt="SCADA"
-                className="
-                  h-[700px]
-                  w-full
-                  object-cover
-                "
+                className="h-[700px] w-full object-cover"
               />
 
               {/* OVERLAY */}
@@ -486,6 +446,274 @@ export default function Home() {
       </section>
 
       {/* =========================
+          PROJECTS
+      ========================= */}
+
+      <section
+        id="projects"
+        className="bg-[#141414] px-6 py-24"
+      >
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="mb-16">
+
+            <p className="mb-3 text-sm uppercase tracking-[0.4em] text-yellow-400">
+              PROJELER
+            </p>
+
+            <h2 className="text-5xl font-semibold text-white">
+              Tamamlanan Projeler
+            </h2>
+
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+
+            <div className="overflow-hidden border border-white/10 bg-[#1f1f1f]">
+
+              <img
+                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop"
+                alt="Project"
+                className="h-72 w-full object-cover"
+              />
+
+              <div className="p-8">
+
+                <h3 className="mb-4 text-2xl font-semibold">
+                  Enerji İzleme Sistemi
+                </h3>
+
+                <p className="leading-8 text-gray-400">
+                  Gerçek zamanlı enerji analiz ve izleme sistemi.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="overflow-hidden border border-white/10 bg-[#1f1f1f]">
+
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+                alt="Project"
+                className="h-72 w-full object-cover"
+              />
+
+              <div className="p-8">
+
+                <h3 className="mb-4 text-2xl font-semibold">
+                  SCADA Merkezi
+                </h3>
+
+                <p className="leading-8 text-gray-400">
+                  Merkezi kontrol ve veri yönetim sistemleri.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="overflow-hidden border border-white/10 bg-[#1f1f1f]">
+
+              <img
+                src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1600&auto=format&fit=crop"
+                alt="Project"
+                className="h-72 w-full object-cover"
+              />
+
+              <div className="p-8">
+
+                <h3 className="mb-4 text-2xl font-semibold">
+                  IEC104 Entegrasyonu
+                </h3>
+
+                <p className="leading-8 text-gray-400">
+                  RTU ve haberleşme altyapı çözümleri.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
+          LOCATION
+      ========================= */}
+
+      <section
+        id="location"
+        className="bg-[#171717] px-6 py-24"
+      >
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="mb-12">
+
+            <p className="mb-3 text-sm uppercase tracking-[0.4em] text-yellow-400">
+              KONUM
+            </p>
+
+            <h2 className="text-5xl font-semibold text-white">
+              Bize Ulaşın
+            </h2>
+
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-2">
+
+            {/* LEFT */}
+
+            <div className="flex flex-col justify-center">
+
+              <h3 className="mb-6 text-3xl font-semibold">
+                AXON ENERJİ
+              </h3>
+
+              <p className="leading-9 text-gray-300">
+                Fevziçakmak Mah. Aslım Cad.
+                Atiker 1. Sanayi Sitesi
+                No:40AA Karatay / KONYA
+              </p>
+
+              <div className="mt-10 space-y-4">
+
+                <p className="text-gray-300">
+                  📞 +90 530 151 89 22
+                </p>
+
+                <p className="text-gray-300">
+                  ✉️ talha@axonenerji.com
+                </p>
+
+              </div>
+
+              <a
+                href="https://maps.app.goo.gl/JQU71EPK5J2pVPnm9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  mt-8
+                  inline-flex
+                  w-fit
+                  items-center
+                  justify-center
+                  bg-yellow-400
+                  px-8
+                  py-4
+                  text-sm
+                  font-semibold
+                  uppercase
+                  tracking-[0.15em]
+                  text-black
+                  transition
+                  hover:bg-yellow-300
+                "
+              >
+                Google Maps'te Aç
+              </a>
+
+            </div>
+
+            {/* RIGHT */}
+
+            <div className="overflow-hidden rounded-[2rem] border border-white/10">
+
+              <iframe
+                src="https://www.google.com/maps?q=Fevzi%C3%A7akmak+Mah.+Asl%C4%B1m+Cad.+Atiker+1.+Sanayi+Sitesi+No:40AA+Karatay+Konya&output=embed"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
+          CONTACT
+      ========================= */}
+
+      <section
+        id="contact"
+        className="bg-[#141414] px-6 py-24"
+      >
+
+        <div className="mx-auto max-w-5xl text-center">
+
+          <p className="mb-3 text-sm uppercase tracking-[0.4em] text-yellow-400">
+            İLETİŞİM
+          </p>
+
+          <h2 className="text-5xl font-semibold text-white">
+            Bizimle İletişime Geçin
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-gray-400">
+            Enerji otomasyonu, SCADA sistemleri ve mühendislik çözümleri için bizimle iletişime geçebilirsiniz.
+          </p>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-5">
+
+            <a
+              href="mailto:talha@axonenerji.com"
+              className="
+                bg-yellow-400
+                px-10
+                py-5
+                text-sm
+                font-semibold
+                uppercase
+                tracking-[0.15em]
+                text-black
+                transition
+                hover:bg-yellow-300
+              "
+            >
+              Mail Gönder
+            </a>
+
+            <a
+              href="https://wa.me/905301518922"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                border
+                border-white/15
+                bg-white/5
+                px-10
+                py-5
+                text-sm
+                uppercase
+                tracking-[0.15em]
+                text-white
+                transition
+                hover:border-yellow-400
+                hover:text-yellow-400
+              "
+            >
+              WhatsApp
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
           FOOTER
       ========================= */}
 
@@ -496,7 +724,7 @@ export default function Home() {
           <img
             src="/logo.png"
             alt="AXON"
-            className="h-16 w-auto"
+            className="h-14 w-auto"
           />
 
           <p className="text-center text-gray-500">
