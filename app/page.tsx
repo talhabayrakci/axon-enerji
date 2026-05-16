@@ -205,18 +205,17 @@ export default function Home() {
                 leading-[1]
                 tracking-tight
                 text-white
-                md:text-3xl
+                md:text-4xl
               "
             >
 
-              Endüstriyel
+              
 
               <span className="block text-yellow-400">
-                Enerji
+                SCADA SİSTEMLERİ
               </span>
 
-              Otomasyonu &
-              SCADA
+               
 
             </h1>
 
@@ -229,7 +228,7 @@ export default function Home() {
                 text-gray-300
               "
             >
-              SCADA sistemleri, IEC 60870-5-101/104 haberleşme
+              IEC 60870-5-101/104 haberleşme
               altyapıları, RTU çözümleri ve enerji otomasyonu
               alanlarında modern mühendislik hizmetleri sunuyoruz.
             </p>
