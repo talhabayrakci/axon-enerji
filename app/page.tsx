@@ -6,24 +6,26 @@ export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <main className="min-h-screen overflow-hidden bg-black text-white">
+    <main className="overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#111111] to-[#1b1b1b] text-white">
 
       {/* Navbar */}
-      <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
+      <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/50 backdrop-blur-xl">
 
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
           {/* Logo */}
-          <a href="#">
+          <a href="#" className="flex items-center gap-4">
+
             <img
               src="/logo.png"
               alt="Axon Enerji"
-              className="h-12 w-auto"
+              className="h-36 w-auto drop-shadow-2xl md:h-20"
             />
+
           </a>
 
           {/* Desktop Menu */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
 
             <a href="#" className="transition hover:text-yellow-400">
               Ana Sayfa
@@ -75,18 +77,13 @@ export default function Home() {
 
             <div className="flex flex-col gap-6 text-lg">
 
-              <a
-                href="#"
-                onClick={() => setMobileMenu(false)}
-                className="transition hover:text-yellow-400"
-              >
+              <a href="#" onClick={() => setMobileMenu(false)}>
                 Ana Sayfa
               </a>
 
               <a
                 href="#services"
                 onClick={() => setMobileMenu(false)}
-                className="transition hover:text-yellow-400"
               >
                 Hizmetler
               </a>
@@ -94,7 +91,6 @@ export default function Home() {
               <a
                 href="#projects"
                 onClick={() => setMobileMenu(false)}
-                className="transition hover:text-yellow-400"
               >
                 Projeler
               </a>
@@ -102,7 +98,6 @@ export default function Home() {
               <a
                 href="#about"
                 onClick={() => setMobileMenu(false)}
-                className="transition hover:text-yellow-400"
               >
                 Hakkımızda
               </a>
@@ -110,7 +105,6 @@ export default function Home() {
               <a
                 href="#contact"
                 onClick={() => setMobileMenu(false)}
-                className="transition hover:text-yellow-400"
               >
                 İletişim
               </a>
@@ -123,47 +117,70 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="grid-background relative flex min-h-screen items-center justify-center px-6 text-center">
+      <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-32">
 
-        {/* Glow */}
-        <div className="absolute h-[500px] w-[500px] rounded-full bg-yellow-400/20 blur-3xl"></div>
+        {/* Background Glow */}
+        <div className="absolute left-[-200px] top-[100px] h-[500px] w-[500px] rounded-full bg-yellow-400/20 blur-3xl"></div>
 
-        {/* Hero Content */}
-        <div className="relative z-10">
+        <div className="absolute right-[-200px] bottom-[-100px] h-[400px] w-[400px] rounded-full bg-green-500/20 blur-3xl"></div>
 
-          <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
-            ENERJİ OTOMASYONU & SCADA
-          </p>
+        <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
 
-          <h1 className="text-5xl font-bold leading-tight md:text-7xl">
+          {/* Left */}
+          <div className="relative z-10">
 
-            Geleceğin
-            <span className="text-yellow-400"> Enerji </span>
-            Teknolojileri
+            <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
+              ENERJİ OTOMASYONU & SCADA
+            </p>
 
-          </h1>
+            <h1 className="text-5xl font-black leading-tight md:text-7xl">
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
+              Güçlü
+              <span className="text-yellow-400"> Enerji </span>
+              Teknolojileri
 
-            SCADA sistemleri, enerji otomasyonu, RTU çözümleri ve endüstriyel yazılım geliştirme hizmetleri sunuyoruz.
+            </h1>
 
-          </p>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-300">
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
+              SCADA sistemleri, enerji otomasyonu, RTU çözümleri,
+              IEC 60870-5-101/104 haberleşme sistemleri ve
+              endüstriyel yazılım çözümleri sunuyoruz.
 
-            <a
-              href="#projects"
-              className="rounded-2xl bg-yellow-400 px-8 py-4 font-semibold text-black transition hover:scale-105"
-            >
-              Projelerimiz
-            </a>
+            </p>
 
-            <a
-              href="#contact"
-              className="rounded-2xl border border-white/20 px-8 py-4 transition hover:border-yellow-400 hover:text-yellow-400"
-            >
-              İletişime Geç
-            </a>
+            <div className="mt-10 flex flex-col gap-4 md:flex-row">
+
+              <a
+                href="#projects"
+                className="rounded-2xl bg-yellow-400 px-8 py-4 font-semibold text-black transition hover:scale-105"
+              >
+                Projelerimiz
+              </a>
+
+              <a
+                href="#contact"
+                className="rounded-2xl border border-white/20 px-8 py-4 transition hover:border-yellow-400 hover:text-yellow-400"
+              >
+                İletişime Geç
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* Right */}
+          <div className="relative z-10">
+
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
+
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+                alt="SCADA"
+                className="h-[500px] w-full object-cover"
+              />
+
+            </div>
 
           </div>
 
@@ -174,18 +191,18 @@ export default function Home() {
       {/* Services */}
       <section
         id="services"
-        className="border-t border-white/10 bg-[#050505] px-6 py-24"
+        className="px-6 py-28"
       >
 
         <div className="mx-auto max-w-7xl">
 
-          <div className="mb-16 text-center">
+          <div className="mb-20 text-center">
 
             <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
               HİZMETLERİMİZ
             </p>
 
-            <h2 className="text-4xl font-bold md:text-5xl">
+            <h2 className="text-4xl font-bold md:text-6xl">
               Mühendislik ve Yazılım Çözümleri
             </h2>
 
@@ -193,119 +210,70 @@ export default function Home() {
 
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-yellow-400">
+            <div className="rounded-[2rem] border border-yellow-400/20 bg-gradient-to-b from-yellow-400/10 to-transparent p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-yellow-400">
 
-              <div className="mb-6 text-5xl text-yellow-400">
+              <div className="mb-6 text-5xl">
                 ⚡
               </div>
 
-              <h3 className="mb-4 text-2xl font-semibold">
+              <h3 className="mb-4 text-2xl font-bold">
                 Enerji Otomasyonu
               </h3>
 
-              <p className="leading-7 text-gray-400">
-                Trafo merkezleri ve enerji otomasyon çözümleri.
+              <p className="leading-8 text-gray-300">
+                Trafo merkezleri ve enerji otomasyon sistemleri.
               </p>
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-green-400">
+            <div className="rounded-[2rem] border border-green-400/20 bg-gradient-to-b from-green-400/10 to-transparent p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-green-400">
 
-              <div className="mb-6 text-5xl text-green-400">
+              <div className="mb-6 text-5xl">
                 🖥
               </div>
 
-              <h3 className="mb-4 text-2xl font-semibold">
+              <h3 className="mb-4 text-2xl font-bold">
                 SCADA Sistemleri
               </h3>
 
-              <p className="leading-7 text-gray-400">
+              <p className="leading-8 text-gray-300">
                 Gerçek zamanlı kontrol ve izleme altyapıları.
               </p>
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-yellow-400">
+            <div className="rounded-[2rem] border border-yellow-400/20 bg-gradient-to-b from-yellow-400/10 to-transparent p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-yellow-400">
 
-              <div className="mb-6 text-5xl text-yellow-400">
+              <div className="mb-6 text-5xl">
                 🔌
               </div>
 
-              <h3 className="mb-4 text-2xl font-semibold">
+              <h3 className="mb-4 text-2xl font-bold">
                 RTU & Haberleşme
               </h3>
 
-              <p className="leading-7 text-gray-400">
-                IEC 60870-5-101/104 ve Modbus entegrasyonları.
+              <p className="leading-8 text-gray-300">
+                IEC104 ve Modbus haberleşme entegrasyonları.
               </p>
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-2 hover:border-green-400">
+            <div className="rounded-[2rem] border border-green-400/20 bg-gradient-to-b from-green-400/10 to-transparent p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-green-400">
 
-              <div className="mb-6 text-5xl text-green-400">
+              <div className="mb-6 text-5xl">
                 💻
               </div>
 
-              <h3 className="mb-4 text-2xl font-semibold">
+              <h3 className="mb-4 text-2xl font-bold">
                 Yazılım Geliştirme
               </h3>
 
-              <p className="leading-7 text-gray-400">
-                Dashboard ve özel endüstriyel yazılım çözümleri.
+              <p className="leading-8 text-gray-300">
+                Dashboard ve özel yazılım geliştirme hizmetleri.
               </p>
 
             </div>
 
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* Stats */}
-      <section className="border-t border-white/10 bg-black px-6 py-20">
-
-        <div className="mx-auto grid max-w-7xl gap-10 text-center md:grid-cols-4">
-
-          <div>
-            <h3 className="text-5xl font-bold text-yellow-400">
-              50+
-            </h3>
-
-            <p className="mt-3 text-gray-400">
-              Tamamlanan Proje
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-5xl font-bold text-green-400">
-              10+
-            </h3>
-
-            <p className="mt-3 text-gray-400">
-              Yıllık Deneyim
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-5xl font-bold text-yellow-400">
-              7/24
-            </h3>
-
-            <p className="mt-3 text-gray-400">
-              Teknik Destek
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-5xl font-bold text-green-400">
-              %100
-            </h3>
-
-            <p className="mt-3 text-gray-400">
-              Müşteri Memnuniyeti
-            </p>
           </div>
 
         </div>
@@ -315,180 +283,97 @@ export default function Home() {
       {/* Projects */}
       <section
         id="projects"
-        className="border-t border-white/10 bg-[#050505] px-6 py-24"
+        className="bg-gradient-to-b from-[#0f0f0f] to-[#1b1b1b] px-6 py-28"
       >
 
         <div className="mx-auto max-w-7xl">
 
-          <div className="mb-16 text-center">
+          <div className="mb-20 text-center">
 
             <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
               PROJELER
             </p>
 
-            <h2 className="text-4xl font-bold md:text-5xl">
+            <h2 className="text-4xl font-bold md:text-6xl">
               Tamamlanan Projeler
             </h2>
 
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
 
-            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-black">
+            <div className="group overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 backdrop-blur-xl">
 
               <div className="overflow-hidden">
 
                 <img
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1600&auto=format&fit=crop"
                   alt="Project"
-                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                  className="h-80 w-full object-cover transition duration-700 group-hover:scale-110"
                 />
 
               </div>
 
               <div className="p-8">
 
-                <h3 className="mb-3 text-2xl font-semibold">
+                <h3 className="mb-4 text-2xl font-bold">
                   SCADA Kontrol Merkezi
                 </h3>
 
-                <p className="leading-7 text-gray-400">
-                  Gerçek zamanlı enerji izleme ve uzaktan kontrol altyapısı.
+                <p className="leading-8 text-gray-300">
+                  Gerçek zamanlı enerji izleme ve uzaktan kontrol altyapıları.
                 </p>
 
               </div>
 
             </div>
 
-            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-black">
+            <div className="group overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 backdrop-blur-xl">
 
               <div className="overflow-hidden">
 
                 <img
-                  src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1200&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
                   alt="Project"
-                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                  className="h-80 w-full object-cover transition duration-700 group-hover:scale-110"
                 />
 
               </div>
 
               <div className="p-8">
 
-                <h3 className="mb-3 text-2xl font-semibold">
-                  RTU Haberleşme Sistemi
+                <h3 className="mb-4 text-2xl font-bold">
+                  RTU Haberleşme
                 </h3>
 
-                <p className="leading-7 text-gray-400">
-                  IEC 60870-5-104 haberleşme çözümleri.
+                <p className="leading-8 text-gray-300">
+                  IEC 60870-5-104 haberleşme ve entegrasyon çözümleri.
                 </p>
 
               </div>
 
             </div>
 
-            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-black">
+            <div className="group overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 backdrop-blur-xl">
 
               <div className="overflow-hidden">
 
                 <img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop"
                   alt="Project"
-                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                  className="h-80 w-full object-cover transition duration-700 group-hover:scale-110"
                 />
 
               </div>
 
               <div className="p-8">
 
-                <h3 className="mb-3 text-2xl font-semibold">
-                  Endüstriyel Yazılım
+                <h3 className="mb-4 text-2xl font-bold">
+                  Enerji İzleme Yazılımı
                 </h3>
 
-                <p className="leading-7 text-gray-400">
-                  Dashboard ve veri analiz sistemleri geliştirme hizmetleri.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* About */}
-      <section
-        id="about"
-        className="border-t border-white/10 bg-black px-6 py-24"
-      >
-
-        <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:items-center">
-
-          <div>
-
-            <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
-              HAKKIMIZDA
-            </p>
-
-            <h2 className="text-4xl font-bold md:text-5xl">
-              Güvenilir Enerji Teknolojileri
-            </h2>
-
-            <p className="mt-8 text-lg leading-8 text-gray-400">
-
-              Axon Enerji Mühendislik olarak enerji otomasyonu,
-              SCADA sistemleri, RTU çözümleri ve endüstriyel yazılım alanlarında
-              modern mühendislik hizmetleri sunuyoruz.
-
-            </p>
-
-            <p className="mt-6 text-lg leading-8 text-gray-400">
-
-              Güvenilir, sürdürülebilir ve yüksek performanslı sistemler
-              geliştirerek müşterilerimizin operasyonel verimliliğini artırıyoruz.
-
-            </p>
-
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-10">
-
-            <div className="space-y-8">
-
-              <div>
-
-                <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
-                  IEC 60870-5-101/104
-                </h3>
-
-                <p className="text-gray-400">
-                  Endüstriyel haberleşme protokol çözümleri.
-                </p>
-
-              </div>
-
-              <div>
-
-                <h3 className="mb-2 text-2xl font-semibold text-green-400">
-                  SCADA & RTU
-                </h3>
-
-                <p className="text-gray-400">
-                  Enerji izleme ve kontrol sistemleri.
-                </p>
-
-              </div>
-
-              <div>
-
-                <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
-                  Yazılım Çözümleri
-                </h3>
-
-                <p className="text-gray-400">
-                  Dashboard ve otomasyon uygulamaları.
+                <p className="leading-8 text-gray-300">
+                  Dashboard ve enerji analiz sistemleri geliştirme çözümleri.
                 </p>
 
               </div>
@@ -504,39 +389,41 @@ export default function Home() {
       {/* Contact */}
       <section
         id="contact"
-        className="border-t border-white/10 bg-[#050505] px-6 py-24"
+        className="relative px-6 py-28"
       >
 
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-r from-yellow-400/10 to-green-500/10"></div>
+
+        <div className="relative mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-2xl">
 
           <p className="mb-4 text-sm uppercase tracking-[0.4em] text-yellow-400">
             İLETİŞİM
           </p>
 
-          <h2 className="text-4xl font-bold md:text-5xl">
+          <h2 className="text-4xl font-bold md:text-6xl">
             Bizimle İletişime Geçin
           </h2>
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-gray-400">
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-300">
 
-            Enerji otomasyonu ve SCADA çözümleri için bize ulaşın.
+            Enerji otomasyonu, SCADA sistemleri ve yazılım çözümleri için bizimle iletişime geçin.
 
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
 
             <a
-              href="mailto:info@axonenerji.com"
+              href="mailto:talha@axonenerji.com"
               className="rounded-2xl bg-yellow-400 px-8 py-4 font-semibold text-black transition hover:scale-105"
             >
-              info@axonenerji.com
+              talha@axonenerji.com
             </a>
 
             <a
               href="https://wa.me/905301518922"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-2xl border border-white/20 px-8 py-4 transition hover:border-green-400 hover:text-green-400"
+              className="rounded-2xl border border-green-400/30 bg-green-500/10 px-8 py-4 transition hover:scale-105 hover:border-green-400"
             >
               WhatsApp
             </a>
@@ -547,23 +434,33 @@ export default function Home() {
 
       </section>
 
-      {/* WhatsApp Floating Button */}
+      {/* WhatsApp Floating */}
       <a
         href="https://wa.me/905301518922"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-3xl text-white shadow-2xl transition hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-3xl shadow-2xl transition hover:scale-110"
       >
         💬
       </a>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-black px-6 py-10">
+      <footer className="border-t border-white/10 bg-black/60 px-6 py-10 backdrop-blur-xl">
 
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center md:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
 
-          <p className="text-gray-500">
-            © 2026 Axon Enerji Mühendislik
+          <div>
+
+            <img
+              src="/logo.png"
+              alt="Axon"
+              className="h-16 w-auto"
+            />
+
+          </div>
+
+          <p className="text-center text-gray-400">
+            © 2026 AXON | Enerji Otomasyonu & SCADA
           </p>
 
           <div className="flex gap-6 text-gray-400">
