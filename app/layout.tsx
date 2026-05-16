@@ -1,20 +1,79 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "AXON ENERJİ",
-  description: "Enerji otomasyonu, SCADA sistemleri, RTU çözümleri ve endüstriyel yazılım hizmetleri.",
+  title: "AXON ENERJİ | Enerji Otomasyonu & SCADA",
+
+  description:
+    "SCADA sistemleri, enerji otomasyonu, RTU çözümleri, IEC 60870-5-101/104 haberleşme sistemleri ve endüstriyel yazılım çözümleri.",
+
+  keywords: [
+    "SCADA",
+    "Enerji Otomasyonu",
+    "RTU",
+    "IEC104",
+    "IEC101",
+    "Modbus",
+    "Enerji İzleme",
+    "Endüstriyel Yazılım",
+    "AXON Enerji",
+  ],
+
+  authors: [{ name: "AXON Enerji" }],
+
+  creator: "AXON Enerji",
+
+  openGraph: {
+    title: "AXON ENERJİ",
+    description:
+      "Enerji otomasyonu, SCADA sistemleri ve endüstriyel yazılım çözümleri.",
+    url: "https://axonenerji.com",
+    siteName: "AXON ENERJİ",
+    locale: "tr_TR",
+    type: "website",
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AXON ENERJİ",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "AXON ENERJİ",
+    description:
+      "Enerji otomasyonu, SCADA sistemleri ve yazılım çözümleri.",
+    images: ["/og-image.png"],
+  },
+
+  icons: {
+    icon: [
+      {
+        url: "/favicon.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicon.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+
+    apple: [
+      {
+        url: "/favicon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+
+  metadataBase: new URL("https://axonenerji.com"),
 };
 
 export default function RootLayout({
@@ -23,11 +82,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="tr">
+
+      <body className="bg-black text-white antialiased">
+
+        {children}
+
+      </body>
+
     </html>
   );
 }
