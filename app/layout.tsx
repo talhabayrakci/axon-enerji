@@ -2,74 +2,63 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://axonenerji.com"),
-
   title: {
-    default: "AXON ENERJİ",
+    default: "AXON ENERJİ | SCADA & Enerji Otomasyonu",
     template: "%s | AXON ENERJİ",
   },
 
   description:
-    "SCADA sistemleri, enerji otomasyonu, RTU çözümleri, IEC 60870-5-101/104 haberleşme sistemleri ve endüstriyel yazılım çözümleri.",
+    "AXON ENERJİ; SCADA sistemleri, enerji otomasyonu, RTU çözümleri, IEC 60870-5-101/104 haberleşme sistemleri ve endüstriyel yazılım alanlarında mühendislik hizmetleri sunar.",
 
   keywords: [
     "SCADA",
     "Enerji Otomasyonu",
     "RTU",
-    "IEC104",
-    "IEC101",
-    "Modbus",
-    "Enerji İzleme",
-    "Endüstriyel Yazılım",
-    "AXON Enerji",
-    "SICAM A8000",
+    "IEC 104",
+    "IEC 101",
+    "Endüstriyel Otomasyon",
+    "SCADA Sistemleri",
+    "Konya SCADA",
+    "Enerji Yazılımı",
+    "RTU Çözümleri",
     "IEC 60870-5-104",
-    "Enerji Teknolojileri",
+    "IEC 60870-5-101",
+    "AXON ENERJİ",
   ],
 
   authors: [
     {
-      name: "AXON Enerji",
-      url: "https://axonenerji.com",
+      name: "AXON ENERJİ",
     },
   ],
 
-  creator: "AXON Enerji",
-  publisher: "AXON Enerji",
+  creator: "AXON ENERJİ",
 
-  applicationName: "AXON ENERJİ",
+  publisher: "AXON ENERJİ",
 
-  category: "technology",
+  metadataBase: new URL("https://axonenerji.com"),
 
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+  alternates: {
+    canonical: "/",
   },
 
   openGraph: {
-    type: "website",
-    locale: "tr_TR",
+    title: "AXON ENERJİ | SCADA & Enerji Otomasyonu",
+
+    description:
+      "SCADA sistemleri, RTU çözümleri, IEC104 haberleşme altyapıları ve enerji otomasyonu mühendislik hizmetleri.",
+
     url: "https://axonenerji.com",
 
     siteName: "AXON ENERJİ",
 
-    title: "AXON ENERJİ",
-    description:
-      "Enerji otomasyonu, SCADA sistemleri ve endüstriyel yazılım çözümleri.",
+    locale: "tr_TR",
+
+    type: "website",
 
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "AXON ENERJİ",
@@ -83,41 +72,96 @@ export const metadata: Metadata = {
     title: "AXON ENERJİ",
 
     description:
-      "Enerji otomasyonu, SCADA sistemleri ve yazılım çözümleri.",
+      "SCADA sistemleri ve enerji otomasyonu çözümleri.",
 
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
-  },
-
-  alternates: {
-    canonical: "https://axonenerji.com",
+  robots: {
+    index: true,
+    follow: true,
   },
 
   verification: {
-    google: "google-site-verification-kodu",
+    google: "BURAYA_GOOGLE_VERIFICATION_KODU",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="tr"
       suppressHydrationWarning
     >
-      <body className="bg-[#0a0a0a] text-white antialiased">
+
+      <body
+        className="
+          bg-[#111111]
+          text-white
+          antialiased
+        "
+      >
+
+        {/* SEO SCHEMA */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+
+              "@type": "Organization",
+
+              name: "AXON ENERJİ",
+
+              url: "https://axonenerji.com",
+
+              logo: "https://axonenerji.com/logo.png",
+
+              description:
+                "SCADA sistemleri, enerji otomasyonu, RTU çözümleri ve IEC 60870-5-101/104 haberleşme altyapıları.",
+
+              telephone: "+90 530 151 89 22",
+
+              email: "talha@axonenerji.com",
+
+              address: {
+                "@type": "PostalAddress",
+
+                streetAddress:
+                  "Fevziçakmak Mah. Aslım Cad. Atiker 1. Sanayi Sitesi No:40AA",
+
+                addressLocality: "Karatay",
+
+                addressRegion: "Konya",
+
+                postalCode: "42050",
+
+                addressCountry: "TR",
+              },
+
+              areaServed: "Türkiye",
+
+              sameAs: [
+                "https://linkedin.com",
+                "https://instagram.com",
+              ],
+            }),
+          }}
+        />
 
         {children}
 
       </body>
+
     </html>
   );
 }
