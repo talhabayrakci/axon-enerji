@@ -586,6 +586,9 @@ export default function Home() {
                 <p className="text-gray-300">
                   📞 +90 530 151 89 22
                 </p>
+                <p className="text-gray-300">
+                  📞 +90 332 501 81 54
+                </p>
 
                 <p className="text-gray-300">
                   ✉️ talha@axonenerji.com
