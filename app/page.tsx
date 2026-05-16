@@ -19,7 +19,7 @@ export default function Home() {
             <img
               src="/logo.png"
               alt="Axon Enerji"
-              className="h-36 w-auto drop-shadow-2xl md:h-20"
+              className="h-52 w-auto drop-shadow-2xl md:h-20"
             />
 
           </a>
